@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page-Week 3 Lab</title>
+    <!--Link external CSS here-->
+    <!--rel -relative link is what we have in our files-->
+    <link rel="stylesheet" href="css/week3.css">
+    <!--links JS file-->
+    <script src="js/riddle.js"></script>
+</head>
+<body>
+    <div id="main-container">
+        <h1 id="header">Week 2 & 3 Demo Bio Page</h1>
+        <div id="nav">
+            <a href="bio.html" class="btn">Bio</a>
+            <a href="schools.html" class="btn">Schools</a>
+            <a href="hobbies.html" class="btn">Hobbies</a>
+            <a href="3" class="btn">Riddles</a>
+        </div>
+        <div class="section">
+            <h2 class="title">Riddles</h2>
+           <p>what is black and white and read all over?</p>
+           <input type="button" value="Answer" class="ans-btn" onclick="showAnswer('A Newspaper','answer1')">
+           <span id="answer1"></span>
+           <hr>
+           <p>Whats walks on 4 legs, 3 legs, and 2 legs and is the same thing?</p>
+           <input type="button" value="Answer" class="ans-btn" onclick="showAnswer('A Human','answer2')">
+           <span id="answer2"></span>
+
+        <div id="footer">
+
+            <p class="copy">&copy; 2020 HTML JAVASCRIPT CLASS</p>
+        </div>
+
+    </div>
+</body>
+</html>
