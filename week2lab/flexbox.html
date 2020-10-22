@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox layout Demo </title>
+        <style>
+            /*CSS will go here*/
+            html, body{
+                /*height:100%;*/
+                display: flex;
+                justify-content: center;
+                background-color:gray;
+                background-image: url("images/oriental-tiles.png");
+            }
+            #container{
+                width:1000px;
+               /* height:100%;*/
+                background-color:rgba(0,255, 0,0.4);
+                display: flex;
+                flex-direction: column;
+            }
+            #header{
+                background-color: tomato;
+                text-align: center;
+            }            
+            #nav{
+                background-color: purple;
+                display: flex;
+                justify-content: center;
+            
+            }          
+            #content{
+                background-color: royalblue;
+                display: flex;
+
+            }          
+            #footer{
+                background-color:springgreen;
+                text-align: center;
+                line-height: 100px;
+            }        
+            .btn:link{
+                background-color: skyblue;
+                color: black;
+                /*padding, border, margin all used to add spave between*/
+                padding: 10px;
+                margin: 20px 20px 20px 0;
+                font-size: larger;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+                border-radius: 15px; /*border-radius makes it round*/
+                box-shadow: 6px 6px rgba(0, 0, 0, 0.541); /*box shadow adds a drop shadow*/
+            }
+            .btn:visited{
+                color: black;
+            }
+            .btn:hover{
+                background-color: gray;
+            }
+            .btn:active{
+                background-color: greenyellow;
+            }
+            .content-left{
+                width: 500px;
+                height: 500px;
+                background-color: hotpink;
+            }
+            .content-right{
+                width: 500px;
+                height: 500px;
+                background-color:lavender;
+            }
+        </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+        <h1>Welcome to te Flex Box Div Page!</h1>
+    </div>
+        <div id="nav">
+            <a href="#" class="btn">Home</a>
+            <a href="#" class="btn">Bio</a>
+            <a href="#" class="btn">Images</a>
+            <a href="#" class="btn">Contact</a>
+        </div>
+        <div id="content">
+            <div class="content-left"><!--Left Content will be here-->
+                <p style="color:white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nibh elit, consequat vel lectus eget, rutrum laoreet felis. Sed maximus libero mi. Etiam condimentum, neque id semper pellentesque, velit purus volutpat enim, vitae euismod dui lectus vel tortor. Sed erat risus, lacinia nec eros vel, imperdiet semper ante. Aliquam rhoncus finibus ex vel consequat. Quisque auctor interdum turpis, semper aliquam leo finibus a. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ornare fermentum augue quis pellentesque. Phasellus imperdiet lectus non arcu sollicitudin auctor vitae nec libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec enim urna, convallis eu purus tincidunt, vehicula semper turpis. Maecenas cursus in ex id tempus. Nam nec semper diam.
+
+                </p>
+
+            </div>
+            <div class="content-right"><!--Right content will be here-->
+        <img src="images/yoshiii.png" alt="urnotmydad" width="450">
+        <!--can resize images in photoshop to fit into flex box-->
+            </div>
+        </div>
+        <div id="footer">
+            &copy; 2020 Cassandre Federowicz New England Institute of Technology 
+        </div>
+        </div>
+    </div>
+</body>
+</html>
