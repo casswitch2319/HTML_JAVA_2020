@@ -3,3 +3,23 @@ color:aquamarine;
 /* have to gave selector (h1) declatration (color) declaration (font size, color, etc)*/
 
 }
+/*pusedo classes example*/
+
+a:link{
+    color: blue;
+    font-size: larger;
+    text-decoration: none;
+}
+
+a:visited{
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+a:hover{
+    text-decoration: underline;
+}
+
+a:active{
+    color: yellow;
+}

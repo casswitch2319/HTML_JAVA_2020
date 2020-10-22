@@ -1,0 +1,25 @@
+
+
+    body {
+        background-image: url(images/seam.jpg);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        color:#0A31F5;
+}
+
+#headerBio {
+        color:#F50A7F;
+        background-color:#f4E2FC;
+        width: 950px;
+        text-align: center;
+        margin: auto;
+        border: inset black; 
+        padding: 10px 0 10px 0;
+    }
+
+#h2bio{
+        background-color: #5ff7bb;
+        border: inset black;
+        width: 50px;
+}
+
