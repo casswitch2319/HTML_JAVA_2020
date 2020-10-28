@@ -1,0 +1,119 @@
+/* CSS for week 3 goes here*/
+html, body{
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aqua;
+    display: flex;
+    background-color: black;
+    background-image:url(images/weeen.jpg);
+    background-size: 100%;
+
+
+}
+#container{
+    width: 1000px;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    /*potentially want this out*/
+}
+
+#header{
+    background-color:#CEC4D1;
+    padding: 1px;
+    color: black;
+
+}
+/*all nav and buttons*/
+
+#nav{
+    background-color:#782BA7;
+    display: flex;
+    justify-content: center;
+    border: inset aqua;
+    border-style: solid;
+    border-radius: thick;
+}
+.btn:link{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin: 10px 5px 10px 5px;
+    text-decoration: none;
+    font-style: bold;
+    border-radius: 10px;
+    box-shadow: 4px 4px rgb(180, 236, 236);
+}
+.btn:visited{
+    color: white
+}
+.btn:hover{
+    background-color: aqua;
+    color: black;
+}
+
+/*body content*/
+
+#content{
+    display: flex;
+}
+#content2{
+    display: flex;
+    background-image: url(images/NEIT.jpg);
+    background-repeat: no-repeat;
+    background-size: 1000px 100%;
+
+}
+.h2{
+    text-align: center;
+    color: black;
+    border: solid black;
+    background-color:aquamarine;
+}
+
+#p1{
+    text-align: center;
+}
+.contentLeftindex{
+    background-color: gray;
+    width: 400px;
+    height: 400px;
+    margin: 50px;
+    border: inset aquamarine;
+    padding: 5px;
+}
+.contentRightindex{
+    background-color: gray;
+    height: 400px; 
+    width: 400px;
+    margin: 50px;
+    border: inset aquamarine;
+    padding: 5px;
+
+}
+.schoolContent{
+    background-color: rgba(128, 128, 128, 0.774);
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    padding: 5px;
+    border: inset aquamarine;
+}
+
+#riddles{
+    background-color: gray;
+    width: 800px;
+    height: 500px;
+    margin: 50px 50px 0px 50px;
+    padding: 50px;
+    border:inset aquamarine;
+
+
+
+}
+#footer{
+    text-align: center;
+    line-height: 100px;
+
+}
