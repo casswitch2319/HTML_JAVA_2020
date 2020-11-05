@@ -24,14 +24,14 @@ cloud.src = 'images/cloud.png';
 //this will start the timer for animation//
 var timer = requestAnimationFrame(draw);
 
-var x = 0;
+var x = -75;
 
 //values represent x value of the start and finish line//
 var start = 58;
 var finish = 956;
 
 //fuel values//
-var startFuel = 860;
+var startFuel = 935;
 var fuel = startFuel;
 
 var barFuelWidth = 512;
@@ -62,7 +62,7 @@ function draw() {
 
     drawStartLine();
     drawFinishLine();
-    drawCar();
+    //drawCar();
     drawCloud();
     drawSprite();
    
