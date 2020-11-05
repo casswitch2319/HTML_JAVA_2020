@@ -3,8 +3,24 @@
 var c = document.querySelector('canvas');
 var ctx = c.getContext('2d');
 
-var mario = new Image();
-mario.src = 'images/mario2.png';
+var spyro = new Image();
+spyro.src = 'images/spyro.png';
+//this will start the timer for animation//
+var timer = requestAnimationFrame(draw);
+
+
+var SL = new Image();
+SL.src = 'images/starttt.jpg';
+//this will start the timer for animation//
+var timer = requestAnimationFrame(draw);
+
+var FL = new Image();
+FL.src = 'images/finishhh.jpg';
+//this will start the timer for animation//
+var timer = requestAnimationFrame(draw);
+
+var cloud = new Image();
+cloud.src = 'images/cloud.png';
 //this will start the timer for animation//
 var timer = requestAnimationFrame(draw);
 
@@ -15,14 +31,14 @@ var start = 58;
 var finish = 956;
 
 //fuel values//
-var startFuel = 702;
+var startFuel = 860;
 var fuel = startFuel;
 
 var barFuelWidth = 512;
 
 //start timer stuff
 var sec = 3;
-var fps = 100;
+var fps = 60;
 var frames = fps;
 
 
@@ -34,12 +50,12 @@ function draw() {
 
 
     //draws text//
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = 'white';
     ctx.lineWidth = 1;
-    ctx.font = '50px Arial';
+    ctx.font = '60px Amatic SC';
     ctx.textAlign = 'center';
-    ctx.fillText('Car Game', c.width / 2, 75);
-    ctx.strokeText('Car Game', c.width / 2, 75);
+    ctx.fillText('Do you win?', c.width / 2, 60);
+    ctx.strokeText('Do you win?', c.width / 2, 60);
 
 
 
@@ -47,24 +63,28 @@ function draw() {
     drawStartLine();
     drawFinishLine();
     drawCar();
+    drawCloud();
     drawSprite();
+   
+    drawFuelBarBackground();
     drawFuelBar();
     drawFuelText();
 
+
     //updates x//
 
-    if(sec>0){
+    if (sec > 0) {
         runStartTimer();
         drawStartTimer();
     }
 
     else {
         if (fuel > 0) {
-            x += 1;
-            fuel -= 1;
+            x += .5;
+            fuel -= .5;
         }
     }
-  
+
 
 
     //checks to see when we run out of fuel or pass finish line//
@@ -76,66 +96,85 @@ function draw() {
 
 }
 
-function runStartTimer(){
-    frames -=1;
+function runStartTimer() {
+    frames -= 1;
     //cooldown state//
-    if(frames < 0){
+    if (frames < 0) {
         frames = fps;
-        sec -=1;
+        sec -= 1;
     }
 }
 
-function drawStartTimer(){
-    ctx.fillStyle = 'black';
-    ctx.font = '30px Amatic SC';
+function drawStartTimer() {
+    ctx.fillStyle = 'pink';
+    ctx.font = '90px Amatic SC';
     ctx.textAlign = "center"
     ctx.fillText(sec, c.width / 2, c.height / 2)
 }
 
 function drawResults() {
     if (x + 100 > finish) {
-        ctx.fillStyle = 'black';
-        ctx.font = '30px Amatic SC';
+        ctx.fillStyle = 'hotpink';
+        ctx.font = '90px Amatic SC';
         ctx.textAlign = "center"
         ctx.fillText('You Made It! You Win!', c.width / 2, c.height / 2)
     }
     else {
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'hotpink';
         ctx.font = '90px Amatic SC';
         ctx.textAlign = "center"
         ctx.fillText('You Ran Out of Fuel, You Lost ):', c.width / 2, c.height / 2)
     }
 }
 
-function drawSprite(){
-        //drawing the image//
-        ctx.drawImage(mario, x, 100, 100, 100);
+function drawCloud() {
+    ctx.drawImage(cloud, x, 150, 350, 200)
+}
+
+function drawSprite() {
+    //drawing the image//
+    ctx.drawImage(spyro, x, 200, 300, 150);
+   
+
 }
 
 function drawCar() {
-    ctx.fillStyle = 'teal';
-    ctx.fillRect(x, c.height / 2, 100, 50);
+    ctx.fillStyle = 'pink'
+    ctx.fillRect(x, c.height / 2, 150, 20);
+
+
 }
+
 function drawStartLine() {
-    ctx.fillStyle = 'green';
-    ctx.fillRect(start, 100, 10, 400);
+    ctx.fillStyle = '#e2bbf5';
+    ctx.fillRect(start, 110, 10, 400);
+    ctx.drawImage(SL, start, 110, 30, 500)
+
 }
 
 function drawFinishLine() {
-    ctx.fillStyle = 'purple';
-    ctx.fillRect(finish, 100, 10, 400);
+    ctx.fillStyle = '#680596';
+    ctx.fillRect(finish, 110, 10, 400);
+    ctx.drawImage(FL, finish, 110, 30, 500)
+}
+function drawFuelBarBackground() {
+    ctx.fillStyle = 'hotpink'
+    ctx.fillRect(35, 70, 555, 30);
 }
 
 function drawFuelBar() {
     var currentBarWidth = barFuelWidth * getFuelPercent();
-    ctx.fillStyle = 'aqua';
+    ctx.fillStyle = 'lime';
     ctx.fillRect(start, 75, currentBarWidth, 20);
-
 }
 
+
+
+
+
 function drawFuelText() {
-    ctx.fillStyle = 'black';
-    ctx.font = '30px Arial'
+    ctx.fillStyle = 'hotpink';
+    ctx.font = '30px Amatic SC'
     ctx.fillText(fuel.toFixed(0), start, 45);
 }
 

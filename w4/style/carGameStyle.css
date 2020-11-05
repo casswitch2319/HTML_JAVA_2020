@@ -1,0 +1,58 @@
+/*CSS goes here*/
+
+html,body{
+    height: 100%;
+    margin:0;
+    background-image:url(images/pink.png);
+   
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Amatic SC', cursive;
+    
+}
+
+#container{
+    width: 1100px;
+    padding: 10px;
+    background-color: lime;
+    background-image:url(images/green.png);
+
+    
+}
+
+header{
+    background-color:black;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+nav{
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    padding: 10px; 
+}
+
+canvas{
+    border: 5px solid #44a5d1;
+    background-color: black;
+    margin-bottom: 10px;
+    background-image: url(images/beachy.gif);
+}
+
+footer{
+    background-color:black;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+
+}
