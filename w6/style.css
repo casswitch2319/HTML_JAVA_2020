@@ -1,0 +1,43 @@
+html, body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Xanh Mono', monospace;
+    color: aqua;
+    background-image:url(images/rps.jpg);
+}
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border: 1px solid aqua;
+    padding: 5px;
+  
+}
+canvas{
+    border: 1px solid aqua;
+    background-color: black;
+    justify-content: center;
+
+}
+#container{
+    width: 1018px;
+    border: 1px dotted plum;
+    padding: 7px;
+    box-sizing: border-box;
+    background-color: gray;
+}
+a:link, a:visited{
+    display: inline-block;
+    background-color: blueviolet;
+    padding: 10px;
+    margin: 20px;  
+    text-decoration: none;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 30px;
+}
+a:hover{
+    background-color: turquoise;
+    color: black;
+}
