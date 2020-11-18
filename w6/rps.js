@@ -1,8 +1,5 @@
 var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
-ctx.font = "35px Xanh Mono";
-ctx.fillStyle = 'aqua';
-ctx.textAlign = 'center';
 
 
 //array of choices 
@@ -33,6 +30,12 @@ btn[2].addEventListener('click', function (e) {
 
 
 function play(playersChoice) {
+    ctx.clearRect(0, 0, c.width, c.height);
+    
+    ctx.font = "35px Xanh Mono";
+    ctx.fillStyle = 'aqua';
+    ctx.textAlign = 'center';
+
 
 
     //floor makes it round down
