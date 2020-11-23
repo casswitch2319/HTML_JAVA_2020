@@ -24,7 +24,7 @@ if(x>c.width){
     x = -200
 }
 
-    /*
+    
 
     //draw everything to the screen//
 
@@ -50,7 +50,7 @@ ctx.arc(c.width/2, c.height/2, 19,0,2*Math.PI, false);
 ctx.fill()
 ctx.stroke();
 
-*/
+
 //drawing the image//
 ctx.drawImage(mario, x, 100,200, 200);
 
