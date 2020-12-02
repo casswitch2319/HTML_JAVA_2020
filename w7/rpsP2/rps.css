@@ -1,0 +1,60 @@
+html, body{
+    justify-content: center;
+    height: 100%;
+    margin:0;
+    font-family: 'Cinzel', serif;
+    background-image: url('images/elements.jpg');
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+}
+#container{
+    width: 1018px;
+    font-family: 'Cinzel', serif;
+   
+    box-sizing: border-box;
+    background-color: rgba(211, 110, 27, 0.575);
+    height: 1010px;
+   
+}
+header{
+    justify-content: center;
+    text-align: center;
+    text-emphasis: bolder;
+}
+nav{
+    display: flex;
+    justify-content: center;
+
+}
+a:link, a:visited{
+    justify-content: center;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(255, 255, 255, 0.548);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 30px ;
+    color: green;
+}
+/*ask about why hovor color wont change*/
+a:hover{
+    color: orange;
+    background-color: black;
+}
+
+   
+
+canvas{
+    background-color: rgba(33, 130, 175, 0.678);
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    margin-left: 10px;
+    
+
+}
+

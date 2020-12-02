@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test
+    </title>
+    <style>
+      button.button#ok
+      {
+        width:100px;
+        height:100px;
+      }
+    </style>
+    <button class="button" id="ok"></button>
+    <script>
+      var buttons=document.getElementsByClassName("button");
+      for(var b=0;b<buttons.length;b++)
+      {
+        if(buttons[b].id=="ok")
+        {
+          buttons[b].style.background="url('images/ok.png')";   
+        }
+      }
+    </script>
+</head>
+<body>
+    <canvas width="800" height="800">
+
+    
+    <script src="testing.js"></script>
+</body>
+</html>

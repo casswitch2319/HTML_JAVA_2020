@@ -4,6 +4,7 @@ html, body{
     font-family: 'Xanh Mono', monospace;
     color: aqua;
     background-image:url(images/rps.jpg);
+    height: 100%;
 }
 nav{
     display: flex;
