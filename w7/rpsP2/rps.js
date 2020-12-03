@@ -3,7 +3,7 @@ window.onload = function () {
     var c = document.getElementById("canvas")
     var ctx = c.getContext("2d")
     var result = "Select a Fighter from above Start"
-    var win = 0
+
 
     var rps = []
     rps[0] = 'korra'
@@ -63,13 +63,15 @@ window.onload = function () {
         play(3);
     });
 
+
+
     function draw(korra, bolin, mako, tenzin, aang, katara, toph, zuko) {
         ctx.clearRect(0, 0, c.width, c.height)
         ctx.save()
         ctx.font = "35px Cinzel"
         ctx.textAlign = "center"
         ctx.fillStyle = 'orange'
-        
+
         ctx.fillText('Choose Your Fighter', c.width / 2, 75)
         ctx.drawImage(korra, c.width / 2 - korra.width / 2 - 300, 100)
         ctx.drawImage(bolin, c.width / 2 - bolin.width / 2 - 100, 100)
@@ -98,14 +100,7 @@ window.onload = function () {
     }
 
 
-    //ask about win loss counter
-
-
-
     function play(playersChoice) {
-
-
-
         //floor makes it round down
         var cpuChoice = Math.floor(Math.random() * 9)
         //example of switch case
@@ -125,7 +120,7 @@ window.onload = function () {
                     draw(korra, bolin, mako, tenzin, aang, katara, toph, zuko)
                 }
                 else {
-                    result = "Water Bender-Katara vs Fire Bender-Zuko, You Win"
+                    result = "Water Bender-Korra vs Fire Bender-Zuko, You Win"
                     draw(korra, bolin, mako, tenzin, aang, katara, toph, zuko)
                 }
                 break;
