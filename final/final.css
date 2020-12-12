@@ -1,0 +1,33 @@
+html, body{
+    justify-content: center;
+    height: 710px;
+    margin: 0;
+    font-family: 'Ubuntu Mono', monospace;
+    
+}
+body{
+    justify-content: center;
+    display: flex;
+    background-image: url(images/space.jpg);
+}
+header{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+#container{
+    width: 910px;
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: rgba(199, 93, 231, 0.671);
+    justify-content: center;
+}
+footer{
+    text-align: center;
+    justify-content: center;
+}
+canvas{
+    justify-content: center;
+    background-color: aqua;
+    margin-left: 5px;
+    border: solid white;
+}
