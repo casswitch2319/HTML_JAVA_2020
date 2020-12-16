@@ -3,7 +3,7 @@ var ctx = c.getContext("2d")
 var timer = requestAnimationFrame(main)
 var gravity = 1
 var asteroids = new Array()
-var numAsteroids = 10
+var numAsteroids = 20
 var gameOver = true
 var score = 0
 var gameStates = []
@@ -282,7 +282,7 @@ gameStates[1] = function () {
         }
 
         //checks to see if asteroid is off screen
-        if(asteroids[i].x > c.width + asteroids[i].radius){
+        if(asteroids[i].x > c.length + asteroids[i].radius){
             //reset steroids position off screen 
             asteroids[i].y = randomRange(c.height + asteroids[i].radius, 0 + asteroids[i].radius)
             asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius) + c.width
