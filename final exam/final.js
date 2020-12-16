@@ -11,7 +11,7 @@ var currentState = 0
 var ship
 var highScore = 0
 var mainBGImage = new Image()
-mainBGImage.src = "images/start1.jpg"
+mainBGImage.src = "images/start.jpg"
 var endScreen = new Image()
 endScreen.src = "images/end.jpg"
 var asteriodSprite = new Image()
