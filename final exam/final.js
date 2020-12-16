@@ -99,7 +99,7 @@ function PlayerShip() {
         ctx.save();
         ctx.translate(this.x, this.y);
         //this drws the flame behind the ship
-        if (this.right == true) {
+/*        if (this.right == true) {
             ctx.save();
             //adjust the flame length for a flicker effect
             if (this.flamelength == 50) {
@@ -117,7 +117,7 @@ function PlayerShip() {
             ctx.closePath()
             ctx.fill()
             ctx.restore()
-        }
+        }*/
 
      ctx.beginPath();
 
