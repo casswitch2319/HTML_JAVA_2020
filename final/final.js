@@ -11,7 +11,9 @@ var currentState = 0
 var ship
 var highScore = 0
 var mainBGImage = new Image()
-mainBGImage.src = "images/rock.jpg"
+mainBGImage.src = "images/start.jpg"
+var endScreen = new Image()
+endScreen.src = "images/end.jpg"
 var asteriodSprite = new Image()
 asteriodSprite.src = "images/ast.png"
 var shipUser = new Image()
@@ -27,6 +29,9 @@ asteriodSprite.onload = function(){
     main()
 }
 shipUser.onload = function(){
+    main()
+}
+endScreen.onload = function(){
     main()
 }
 
@@ -224,9 +229,8 @@ gameStates[0] = function () {
     ctx.font = "30px Ubuntu Mono"
     ctx.fillStyle = 'white'
     ctx.textAlign = "center"
-    ctx.fillText("Asteroid Avoider", c.width / 2, c.height / 2 - 30)
-    ctx.font = "15px Ubuntu Mono"
-    ctx.fillText("Press Enter To Start", c.width / 2, c.height / 2 + 20)
+  
+    
     ctx.restore()
 }
 
@@ -296,30 +300,31 @@ gameStates[1] = function () {
 }
 
 gameStates[2] = function () {
+    ctx.drawImage(endScreen,0,0,c.width, c.height)
 
     if (score > highScore) {
         //set high score 
         highScore = score
         ctx.save()
-        ctx.font = "30px Arial"
-        ctx.fillStyle = 'white'
+        ctx.font = "20px Arial"
+        ctx.fillStyle = 'black'
         ctx.textAlign = "center"
-        ctx.fillText("Game Over Your Score Was : " + score.toString(), c.width / 2, c.height / 2 - 60)
-        ctx.fillText("Your New High Score is : " + highScore.toString(), c.width / 2, c.height / 2 - 30)
-        ctx.fillText("New Record : " + highScore.toString(), c.width / 2, c.height / 2)
-        ctx.font = "15px Arial"
-        ctx.fillText("Press Enter To Play Again", c.width / 2, c.height / 2 + 20)
+        ctx.fillText("Your Score Was : " + score.toString(), 100, 30)
+        ctx.fillText("Your New High Score is : " + highScore.toString(), 123,50)
+        ctx.fillText("New Record : " + highScore.toString(), 100,70)
+
         ctx.restore()
     }
     else {
         ctx.save()
-        ctx.font = "30px Arial"
-        ctx.fillStyle = 'white'
+        ctx.font = "20px Arial"
+        ctx.fillStyle = 'black'
         ctx.textAlign = "center"
-        ctx.fillText("Game Over Your Score Was : " + score.toString(), c.width / 2, c.height / 2 - 60)
-        ctx.fillText("Game Over Your High Score Was : " + highScore.toString(), c.width / 2, c.height / 2 - 30)
-        ctx.font = "15px Arial"
-        ctx.fillText("Press Enter To Play Again", c.width / 2, c.height / 2 + 20)
+        ctx.fillText("Your Score Was : " + score.toString(), 100, 30)
+        ctx.fillText("Your New High Score is : " + highScore.toString(), 123,50)
+        ctx.fillText("New Record : " + highScore.toString(), 100,70)
+
+
         ctx.restore()
     }
 }

@@ -30,4 +30,5 @@ canvas{
     background-color: aqua;
     margin-left: 5px;
     border: solid white;
+    background-image: url(images/game.jpg);
 }
