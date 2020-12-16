@@ -310,11 +310,11 @@ gameStates[2] = function () {
         //set high score 
         highScore = score
         ctx.save()
-        ctx.font = "20px Arial"
+        ctx.font = "20px Ubuntu Mono"
         ctx.fillStyle = 'black'
         ctx.textAlign = "center"
         ctx.fillText("Your Score Was : " + score.toString(), 100, 30)
-        ctx.fillText("Your New High Score is : " + highScore.toString(), 125,50)
+        ctx.fillText("Your New High Score is : " + highScore.toString(), 135,50)
         ctx.fillText("New Record : " + highScore.toString(), 100,70)
 
         ctx.restore()
