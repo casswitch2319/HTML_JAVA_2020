@@ -17,7 +17,7 @@ endScreen.src = "images/end.jpg"
 var asteriodSprite = new Image()
 asteriodSprite.src = "images/ast.png"
 var shipUser = new Image()
-shipUser = "images/ship.png"
+shipUser.src = "images/ship.png"
 
 
 //add events to launch game because of images in game (onload event that listens for when image is loaded)
@@ -38,15 +38,18 @@ endScreen.onload = function(){
 
 
 
+
 function randomRange(high, low) {
-    return Math.random() * (high - low) + low;
+    return Math.random() * (high - low) + low
 }
 
 //Class for the Asteroids
 function Asteroid() {
     this.radius = randomRange(10, 2)
-    this.x = randomRange(c.width - this.radius, 0 + this.radius)
-    this.y = randomRange(c.height - this.radius, 0 + this.radius) - c.height
+    // this.x = randomRange(c.width - this.radius, 0 + this.radius) 
+    // this.y = randomRange(c.height - this.radius, 0 + this.radius) + c.width
+    this.x = randomRange(c.width - this.radius, 0 + this.radius) +c.height
+    this.y = randomRange(c.height - this.radius, 0 + this.radius) 
     this.vx = randomRange(-5, -10)
     this.vy = randomRange(10, 5)
     this.color = "white";
@@ -70,67 +73,62 @@ function Asteroid() {
 function gameStart() {
     //for loop to create the intances of the asteroids
     for (var i = 0; i < numAsteroids; i++) {
-        asteroids[i] = new Asteroid();
+        asteroids[i] = new Asteroid()
     }
 
     //create the instance of the ship for the game
-    ship = new PlayerShip();
+    ship = new PlayerShip()
 }
 
 //Class for the player ship
 function PlayerShip() {
-    this.x = c.width / 2;
-    this.y = c.height / 2;
-    this.w = 30;
-    this.h = 30;
-    this.vx = 0;
-    this.vy = 0;
+    this.x = 10
+    this.y = c.height / 2
+    this.w = 30
+    this.h = 30
+    this.vx = 0
+    this.vy = 0
     this.up = false;
     this.down = false;
     this.left = false;
     this.right = false;
-    this.flamelength = 30;
+    this.flamelength = 50;
 
 
-
-    this.draw = function () {
+   this.draw = function () {
         ctx.save();
         ctx.translate(this.x, this.y);
         //this drws the flame behind the ship
-        if (this.up == true) {
+        if (this.right == true) {
             ctx.save();
             //adjust the flame length for a flicker effect
-            if (this.flamelength == 30) {
+            if (this.flamelength == 50) {
                 this.flamelength = 10;
             }
             else {
-                this.flamelength = 30;
+                this.flamelength = 50;
             }
-            ctx.fillStyle = "purple";
-            ctx.beginPath();
-            ctx.moveTo(0, this.flamelength);
-            ctx.lineTo(5, 5);
-            ctx.lineTo(-5, 5);
-            ctx.lineTo(0, this.flamelength);
-            ctx.closePath();
-            ctx.fill();
-            ctx.restore();
-        }
-        /*this.draw = function(){
-            ctx.save()
-            ctx.drawImage(shipUser, this.x, this.y,this.w,this.h)
+            ctx.fillStyle = "purple"
+            ctx.beginPath()
+            ctx.moveTo(0, this.flamelength)
+            ctx.lineTo(-10, -20)
+            ctx.lineTo(20, 20)
+            ctx.lineTo(0, this.flamelength)
+            ctx.closePath()
+            ctx.fill()
             ctx.restore()
-        }*/
+        }
+
      ctx.beginPath();
 
         ctx.fillStyle = "red";
-        ctx.moveTo(0, -13);
+        /*ctx.moveTo(0, -13);
         ctx.lineTo(10, 10);
         ctx.lineTo(-10, 10);
         ctx.lineTo(0, -13);
         ctx.closePath();
-        ctx.fill();
-
+        ctx.fill();*/
+        ctx.drawImage(shipUser, 0, 0,this.w,this.h)
         ctx.restore();
     }
 
@@ -180,6 +178,9 @@ function keyPressDown(e) {
         if (e.keyCode === 39) {
             ship.right = true
         }
+        if(e.keyCode ===40){
+            ship.down = true
+        }
     }
     if (gameOver == true) {
         if (e.keyCode === 13) {
@@ -220,6 +221,9 @@ function keyPressUp(e) {
         if (e.keyCode === 39) {
             ship.right = false
         }
+        if(e.keyCode=== 40){
+            ship.down = false
+        }
     }
 }
 //game states for menues and game play 
@@ -244,20 +248,19 @@ gameStates[1] = function () {
     ctx.fillText("Score: " + score.toString(), c.width - 150, 30)
     ctx.restore()
 
-    //ship.vy += gravity;
 
     if (ship.up == true) {
-        ship.vy = -10;
+        ship.vy = -5;
     }
-    else {
-        ship.vy = 3;
+    else if (ship.down == true) {
+        ship.vy = 5;
     }
 
     if (ship.left == true) {
-        ship.vx = -3;
+        ship.vx = -5;
     }
     else if (ship.right == true) {
-        ship.vx = 3;
+        ship.vx = 5;
     }
     else {
         ship.vx = 0;
@@ -279,13 +282,14 @@ gameStates[1] = function () {
         }
 
         //checks to see if asteroid is off screen
-        if (asteroids[i].y > c.height + asteroids[i].radius) {
+        if(asteroids[i].x > c.width + asteroids[i].radius){
             //reset steroids position off screen 
-            asteroids[i].y = randomRange(c.height - asteroids[i].radius, 0 + asteroids[i].radius) - c.height;
-            asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius);
+            asteroids[i].y = randomRange(c.height + asteroids[i].radius, 0 + asteroids[i].radius)
+            asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius) + c.width
         }
+       //GOES SIDEWAYS NOW
         if (gameOver == false) {
-            asteroids[i].y += asteroids[i].vy;
+            asteroids[i].x += asteroids[i].vx;
         }
         asteroids[i].draw();
     }
@@ -310,19 +314,14 @@ gameStates[2] = function () {
         ctx.fillStyle = 'black'
         ctx.textAlign = "center"
         ctx.fillText("Your Score Was : " + score.toString(), 100, 30)
-        ctx.fillText("Your New High Score is : " + highScore.toString(), 123,50)
+        ctx.fillText("Your New High Score is : " + highScore.toString(), 125,50)
         ctx.fillText("New Record : " + highScore.toString(), 100,70)
 
         ctx.restore()
     }
     else {
         ctx.save()
-        ctx.font = "20px Arial"
-        ctx.fillStyle = 'black'
-        ctx.textAlign = "center"
-        ctx.fillText("Your Score Was : " + score.toString(), 100, 30)
-        ctx.fillText("Your New High Score is : " + highScore.toString(), 123,50)
-        ctx.fillText("New Record : " + highScore.toString(), 100,70)
+
 
 
         ctx.restore()
